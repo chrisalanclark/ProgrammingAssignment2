@@ -2,9 +2,18 @@
 ## functions do
 
 ## Write a short comment describing this function
-
 makeCacheMatrix <- function(x = matrix()) {
-
+    i<-NULL  # new matrix, inverse not calculated yet
+    set<-function(aMatrix) {
+        x<<-aMatrix
+        i<<-NULL # matrix changed, clear inverse
+    }
+    get<-function() x
+    setInverse <- function(inverse) i<<-inverse
+    getInverse <- function() i
+    list(set=set, get=get, 
+         setInverse=setInverse,
+         getInverse=getInverse)
 }
 
 
